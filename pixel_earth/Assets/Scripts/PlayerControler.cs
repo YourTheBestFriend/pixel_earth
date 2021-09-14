@@ -1,14 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
-
 public class PlayerControler : MonoBehaviour
 {
-    //Приватные переменные
+    public float speed = 80f;
     private Rigidbody2D rb;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
     private bool FacingRight = true; // Для поворота персонажа в ту сторону в которую он идет
     private float HorizontalMove = 0f;
+    public Animator animator;
 
     //Публичные переменные
     [Header("Player Movement Settings")] // Для названия и дальнейшего отображения перемынных в unity 
@@ -20,22 +20,31 @@ public class PlayerControler : MonoBehaviour
     [Range(-5f, 5f)] public float checkGroundOffsetY = -1.12f;
     [Range(0, 5f)] public float checkGroundRadius = 0.3f;
 
+=======
+    // Start is called before the first frame update
+>>>>>>> parent of e4f2f54 (update player script)
+=======
+    // Start is called before the first frame update
+>>>>>>> parent of e4f2f54 (update player script)
+=======
+    // Start is called before the first frame update
+>>>>>>> parent of e4f2f54 (update player script)
     void Start()
     {
-        //Присваиваем переменной rb компонент Rigidbody2D который висит на персонаже
         rb = GetComponent<Rigidbody2D>();
     }
 
+    // Update is called once per frame
     void Update()
     {
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
-        {
-            //Импульс вверх умножая на силу прыжка
-            rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-        }
+        float moveX = Input.GetAxis("Horizontal");
+        rb.MovePosition(rb.position + Vector2.right * moveX * speed * Time.deltaTime);
+<<<<<<< HEAD
+<<<<<<< HEAD
 
-        //Переменная со значением горизонтали (лево = -1; на месте = 0 ; право = 1;)
-        HorizontalMove = Input.GetAxisRaw("Horizontal") * speed;
+<<<<<<< HEAD
+        //Передача скорости для изменения анимации
+        animator.SetFloat("Speeed", Mathf.Abs(HorizontalMove));
 
         //Условие для вызова функции поворота персонажа
         if (HorizontalMove < 0 && FacingRight)
@@ -83,8 +92,19 @@ public class PlayerControler : MonoBehaviour
             isGrounded = true;
         }
         else
+=======
+        if (Input.GetKeyDown(KeyCode.Space))
+>>>>>>> parent of e4f2f54 (update player script)
+=======
+
+        if (Input.GetKeyDown(KeyCode.Space))
+>>>>>>> parent of e4f2f54 (update player script)
+=======
+
+        if (Input.GetKeyDown(KeyCode.Space))
+>>>>>>> parent of e4f2f54 (update player script)
         {
-            isGrounded = false;
+            rb.AddForce(Vector2.up * 8000);
         }
     }
 }
