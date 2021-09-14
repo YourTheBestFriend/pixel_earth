@@ -5,6 +5,7 @@ public class PlayerControler : MonoBehaviour
     private Rigidbody2D rb;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     private bool FacingRight = true; // Для поворота персонажа в ту сторону в которую он идет
     private float HorizontalMove = 0f;
     public Animator animator;
@@ -25,6 +26,9 @@ public class PlayerControler : MonoBehaviour
 =======
     // Start is called before the first frame update
 >>>>>>> parent of e4f2f54 (update player script)
+=======
+    // Start is called before the first frame update
+>>>>>>> parent of e4f2f54 (update player script)
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -35,6 +39,7 @@ public class PlayerControler : MonoBehaviour
     {
         float moveX = Input.GetAxis("Horizontal");
         rb.MovePosition(rb.position + Vector2.right * moveX * speed * Time.deltaTime);
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 <<<<<<< HEAD
@@ -88,6 +93,10 @@ public class PlayerControler : MonoBehaviour
         }
         else
 =======
+        if (Input.GetKeyDown(KeyCode.Space))
+>>>>>>> parent of e4f2f54 (update player script)
+=======
+
         if (Input.GetKeyDown(KeyCode.Space))
 >>>>>>> parent of e4f2f54 (update player script)
 =======
