@@ -13,7 +13,7 @@ public class PlayerControler : MonoBehaviour
     //Публичные переменные
     [Header("Player Movement Settings")] // Для названия и дальнейшего отображения перемынных в unity 
     [Range(0, 10f)] public float speed = 1f;
-    [Range(0, 15f)] public float jumpForce = 8f;
+    [Range(0, 100f)] public float jumpForce = 8f;
     [Space]
     [Header("Ground Checker Settings")]
     public bool isGrounded = true; // Для проверки соприкасается ли персонаж с объектами
