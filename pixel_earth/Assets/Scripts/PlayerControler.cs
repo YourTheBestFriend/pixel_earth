@@ -9,6 +9,7 @@ public class PlayerControler : MonoBehaviour
     private Rigidbody2D rb;
     private bool FacingRight = true; // Для поворота персонажа в ту сторону в которую он идет
     private float HorizontalMove = 0f;
+    public Animator animator;
 
     //Публичные переменные
     [Header("Player Movement Settings")] // Для названия и дальнейшего отображения перемынных в unity 
@@ -36,6 +37,9 @@ public class PlayerControler : MonoBehaviour
 
         //Переменная со значением горизонтали (лево = -1; на месте = 0 ; право = 1;)
         HorizontalMove = Input.GetAxisRaw("Horizontal") * speed;
+
+        //Передача скорости для изменения анимации
+        animator.SetFloat("Speeed", Mathf.Abs(HorizontalMove));
 
         //Условие для вызова функции поворота персонажа
         if (HorizontalMove < 0 && FacingRight)
