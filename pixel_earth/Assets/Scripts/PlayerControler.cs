@@ -5,12 +5,15 @@ using UnityEngine;
 
 public class PlayerControler : MonoBehaviour
 {
-    //ѕриватные переменные
+    // for animation
+    private Animator anim;
+
+    // ѕриватные переменные
     private Rigidbody2D rb;
     private bool FacingRight = true; // ƒл€ поворота персонажа в ту сторону в которую он идет
     private float HorizontalMove = 0f;
 
-    //ѕубличные переменные
+    // ѕубличные переменные которые отображаютс€ в самой unity
     [Header("Player Movement Settings")] // ƒл€ названи€ и дальнейшего отображени€ перемынных в unity 
     [Range(0, 10f)] public float speed = 1f;
     [Range(0, 100f)] public float jumpForce = 8f;
@@ -24,6 +27,7 @@ public class PlayerControler : MonoBehaviour
     {
         //ѕрисваиваем переменной rb компонент Rigidbody2D который висит на персонаже
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -45,6 +49,16 @@ public class PlayerControler : MonoBehaviour
         else if (HorizontalMove > 0 && !FacingRight)
         {
             Flip();
+        }
+
+        /// Animations
+        if (HorizontalMove != 0) // != значит не стоит // Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) - стрелочки на клаве
+        {
+            anim.SetBool("is_stay", false);
+        }
+        else
+        {
+            anim.SetBool("is_stay", true);
         }
     }
     private void FixedUpdate()
