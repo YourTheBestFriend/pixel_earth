@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: test_go
+  m_Name: baldman_go
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,11 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 4bff0cd3649fb464cb57595eb43277cd, type: 3}
-    - time: 0.016666668
-      value: {fileID: 21300000, guid: 4bff0cd3649fb464cb57595eb43277cd, type: 3}
-    - time: 0.51666665
-      value: {fileID: 21300000, guid: 60138f3911fff8f4db872bbaca927d91, type: 3}
+      value: {fileID: 21300000, guid: f70284b437ab17745afb02da8fd0adf9, type: 3}
+    - time: 0.11666667
+      value: {fileID: 21300000, guid: 955e3fcd6542e1c4b81d87893e704c66, type: 3}
+    - time: 0.23333333
+      value: {fileID: 21300000, guid: 6056e21b2c56f7642b115032fca6d838, type: 3}
+    - time: 0.36666667
+      value: {fileID: 21300000, guid: 16eaebb58620fe74e8887a04956cc8fa, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,15 +46,16 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 4bff0cd3649fb464cb57595eb43277cd, type: 3}
-    - {fileID: 21300000, guid: 4bff0cd3649fb464cb57595eb43277cd, type: 3}
-    - {fileID: 21300000, guid: 60138f3911fff8f4db872bbaca927d91, type: 3}
+    - {fileID: 21300000, guid: f70284b437ab17745afb02da8fd0adf9, type: 3}
+    - {fileID: 21300000, guid: 955e3fcd6542e1c4b81d87893e704c66, type: 3}
+    - {fileID: 21300000, guid: 6056e21b2c56f7642b115032fca6d838, type: 3}
+    - {fileID: 21300000, guid: 16eaebb58620fe74e8887a04956cc8fa, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5333333
+    m_StopTime: 0.38333336
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

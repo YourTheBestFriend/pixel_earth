@@ -3,8 +3,13 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
+
 public class PlayerControler : MonoBehaviour
 {
+    // for ganerate random smoking
+    private int rand_player_smoking = 1; // != 0 - значит smoking
+ 
+
     // for animation
     private Animator anim;
 
@@ -32,6 +37,29 @@ public class PlayerControler : MonoBehaviour
 
     void Update()
     {
+        
+        /// Animations
+        if (HorizontalMove != 0 || !isGrounded) // != значит не стоит // Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) - стрелочки на клаве
+        {
+            // anim.SetBool("is_stay", false);
+            anim.SetBool("is_stay", false);
+        }
+        else
+        {
+            if ((rand_player_smoking == 0) && isGrounded) // Значит он стоит (Для рандома анимации smoking) 
+            {
+                anim.SetBool("is_stay_for_smoking", true);
+            }
+            else
+            {
+                // Зануление можно так сказать 
+                anim.SetBool("is_stay_for_smoking", false);
+            }
+            anim.SetBool("is_stay", true);
+        }
+        
+
+
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
             //Импульс вверх умножая на силу прыжка
@@ -51,15 +79,8 @@ public class PlayerControler : MonoBehaviour
             Flip();
         }
 
-        /// Animations
-        if (HorizontalMove != 0) // != значит не стоит // Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) - стрелочки на клаве
-        {
-            anim.SetBool("is_stay", false);
-        }
-        else
-        {
-            anim.SetBool("is_stay", true);
-        }
+        // smoking or don't smoking
+        rand_player_smoking = Random.Range(0, 500); // чем больше значение тем меньше шанс что попадется 0
     }
     private void FixedUpdate()
     {
@@ -100,5 +121,11 @@ public class PlayerControler : MonoBehaviour
         {
             isGrounded = false;
         }
+    }
+
+    // Функция для контроля переменной которая контралирует анимацию пакоя // Я ПОКА ЭТО НИКДЕ НЕ ИСПОЛЬЗУЮ
+    private void Set_Stay_animation_fasle()
+    { 
+       anim.SetBool("is_stay", false);
     }
 }
