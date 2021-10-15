@@ -80,7 +80,7 @@ public class PlayerControler : MonoBehaviour
         }
 
         // smoking or don't smoking
-        rand_player_smoking = Random.Range(0, 500); // чем больше значение тем меньше шанс что попадется 0
+        rand_player_smoking = Random.Range(0, 5); // чем больше значение тем меньше шанс что попадется 0
     }
     private void FixedUpdate()
     {
