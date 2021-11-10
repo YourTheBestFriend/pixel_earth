@@ -37,7 +37,6 @@ public class PlayerControler : MonoBehaviour
 
     void Update()
     {
-        
         /// Animations
         if (HorizontalMove != 0 || !isGrounded) // != значит не стоит // Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) - стрелочки на клаве
         {
@@ -46,6 +45,7 @@ public class PlayerControler : MonoBehaviour
         }
         else
         {
+            //anim.SetBool("is_jump", true);
             if ((rand_player_smoking == 0) && isGrounded) // Значит он стоит (Для рандома анимации smoking) 
             {
                 anim.SetBool("is_stay_for_smoking", true);
@@ -55,15 +55,19 @@ public class PlayerControler : MonoBehaviour
                 // Зануление можно так сказать 
                 anim.SetBool("is_stay_for_smoking", false);
             }
-            anim.SetBool("is_stay", true);
+            anim.SetBool("is_stay", true); 
         }
-        
 
-
+        // Jump
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
             //Импульс вверх умножая на силу прыжка
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+            anim.SetBool("is_jump", true);
+        }
+        else
+        {
+            anim.SetBool("is_jump", false);
         }
 
         //Переменная со значением горизонтали (лево = -1; на месте = 0 ; право = 1;)
@@ -87,13 +91,13 @@ public class PlayerControler : MonoBehaviour
         //Настраиваем скорость движения по горизонтали а по вертикали оставляем также
         Vector2 targetVelocity = new Vector2(HorizontalMove * 10f, rb.velocity.y);
         rb.velocity = targetVelocity;
-
         CheckGround();
     }
 
     //Функция переворота спрайта персонажа
     private void Flip()
     {
+        anim.SetBool("is_jump", true);
         //Переключение переменной при повороте
         FacingRight = !FacingRight;
 
