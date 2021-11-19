@@ -2142,8 +2142,8 @@ MonoBehaviour:
   Gun: {fileID: 764354277}
   ShootPoint: {fileID: 142344810}
   patron: {fileID: 8979335575540308637, guid: 2316f25a4aa8435408faa225eb9541b8, type: 3}
-  patronSpeed: 1500
-  fireRate: 500
+  patronSpeed: 500
+  fireRate: 1
 --- !u!96 &764354279
 TrailRenderer:
   serializedVersion: 2
