@@ -8,6 +8,14 @@ public class takeFPSincamera : MonoBehaviour
     public Text fpsText;
     public static float fps;
 
+    public PlayerControler PlayerControler
+    {
+        get => default;
+        set
+        {
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {

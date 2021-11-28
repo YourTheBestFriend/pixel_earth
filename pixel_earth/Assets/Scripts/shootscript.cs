@@ -12,6 +12,14 @@ public class shootscript : MonoBehaviour
     float ReadyForNextShoot;
     Vector2 direction;
 
+    public PlayerControler PlayerControler
+    {
+        get => default;
+        set
+        {
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
