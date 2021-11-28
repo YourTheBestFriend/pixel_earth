@@ -42,6 +42,6 @@ public class shootscript : MonoBehaviour
     {
         GameObject PatronIns = Instantiate(patron, ShootPoint.position, ShootPoint.rotation);
         PatronIns.GetComponent<Rigidbody2D>().AddForce(PatronIns.transform.right * patronSpeed);
-        Destroy(PatronIns, 3);
+        //Destroy(PatronIns, 3);
     }
 }
